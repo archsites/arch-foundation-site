@@ -266,35 +266,35 @@ const Index = () => {
       </section>
 
       {/* Reviews */}
-      <section className="py-20 bg-muted">
+      <section className="py-12 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
               Owner Feedback
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 md:mb-4">
               What Homeowners Tell Us
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
               We grow almost entirely through referrals. Here's what some of our recent clients had
               to say after move-in day.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {reviews.map((review, index) => (
-              <div key={index} className="bg-card rounded-lg p-6 card-elevated relative">
-                <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
-                <div className="flex gap-1 mb-4">
+              <div key={index} className="bg-card rounded-lg p-4 sm:p-6 card-elevated relative">
+                <Quote className="absolute top-3 right-3 sm:top-4 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 text-primary/20" />
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    <Star key={i} className="w-3 h-3 sm:w-5 sm:h-5 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">"{review.text}"</p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-heading font-semibold">{review.name}</p>
-                  <p className="text-xs text-muted-foreground">{review.location}</p>
-                  <p className="text-xs text-primary mt-1">{review.project}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-5 sm:line-clamp-none">"{review.text}"</p>
+                <div className="border-t border-border pt-3 sm:pt-4">
+                  <p className="font-heading font-semibold text-sm sm:text-base">{review.name}</p>
+                  <p className="text-[11px] sm:text-xs text-muted-foreground">{review.location}</p>
+                  <p className="text-[11px] sm:text-xs text-primary mt-1">{review.project}</p>
                 </div>
               </div>
             ))}
@@ -303,19 +303,19 @@ const Index = () => {
       </section>
 
       {/* Gallery preview */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
               Recent Work
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">From the Job Site</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 md:mb-4">From the Job Site</h2>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
               A snapshot of recently finished kitchens, baths, basements, additions, and outdoor builds.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {featured.map((img, index) => (
               <div key={index} className="aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer">
                 <img src={img} alt={`Arch GC project ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -323,7 +323,7 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 md:mt-12">
             <Button variant="default" size="lg" asChild>
               <Link to="/gallery">
                 See the Full Portfolio
