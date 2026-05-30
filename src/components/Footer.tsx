@@ -5,9 +5,9 @@ import logo from "@/assets/logo.png";
 const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          <div className="space-y-4">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="space-y-4 md:col-span-2 lg:col-span-1">
             <div className="bg-white rounded-lg p-2 inline-block">
               <img src={logo} alt="Arch General Contracting" className="h-16 w-auto" />
             </div>
