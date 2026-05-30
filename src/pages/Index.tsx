@@ -6,88 +6,76 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, CheckCircle, Phone, Hammer, Home, Paintbrush, Wrench, Star, Send, Quote } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
-import heroImage from "@/assets/hero-kitchen.jpg";
-import craftsmanImage from "@/assets/craftsman.jpg";
-import deckImage from "@/assets/deck.jpg";
-import exteriorImage from "@/assets/exterior-remodel.jpg";
-import bathroomImage from "@/assets/bathroom.jpg";
-import basementImage from "@/assets/basement.jpg";
-import additionImage from "@/assets/addition.jpg";
-import kendallParkKitchen from "@/assets/gallery/kendall-park-kitchen-full.jpg";
-import cherryHillShower from "@/assets/gallery/cherry-hill-shower-wide.jpg";
-import princetonBasement from "@/assets/gallery/princeton-basement-1.jpg";
-import somersetKitchen from "@/assets/gallery/somerset-kitchen-full.jpg";
-import mtLaurelBathroom from "@/assets/gallery/mt-laurel-shower-enclosure.jpg";
-import newBrunswickWindow from "@/assets/gallery/new-brunswick-bay-window-exterior.jpg";
+import { photos } from "@/assets/projects";
 
 const services = [
   {
     title: "Interior Remodel",
-    description: "Transform your living spaces with custom kitchen, bathroom, and basement renovations.",
+    description: "Whole-home interior renovations — from framing and drywall to flooring, trim, and finish carpentry that ties every room together.",
     icon: Home,
     href: "/services/interior",
-    image: heroImage,
+    image: photos.interiorLivingDining,
   },
   {
     title: "Exterior Remodel",
-    description: "Enhance your home's curb appeal with siding, trim, and outdoor woodwork.",
+    description: "Siding, stone facades, roofing, and curb-appeal upgrades that protect your home and make it stand out on the block.",
     icon: Paintbrush,
     href: "/services/exterior",
-    image: exteriorImage,
+    image: photos.exteriorStoneFront,
   },
   {
     title: "Additions",
-    description: "Expand your living space with professionally built home additions.",
+    description: "Ground-up additions and second-story expansions built tight to code, finished to match the rest of your home seamlessly.",
     icon: Hammer,
     href: "/services/additions",
-    image: additionImage,
+    image: photos.additionRearComplete,
   },
   {
     title: "Decks & Patios",
-    description: "Create the perfect outdoor living space with custom decks and patios.",
+    description: "Covered patios, pergolas, and outdoor living spaces engineered to last decades, framed and finished by our in-house crew.",
     icon: Wrench,
     href: "/services/decks",
-    image: deckImage,
+    image: photos.patioCoveredFramedSide,
   },
 ];
 
 const benefits = [
-  "Licensed and Insured Professionals",
-  "Free Detailed Estimates",
-  "Quality Materials & Craftsmanship",
-  "On-Time Project Completion",
-  "10+ Years of Experience",
-  "100% Satisfaction Guaranteed",
+  "Fully Licensed & Insured in NJ",
+  "Free On-Site Project Estimates",
+  "Crew-Built, Not Subcontracted Out",
+  "Clear Timelines & Weekly Updates",
+  "Proven Track Record Across NJ",
+  "Workmanship Guaranteed in Writing",
 ];
 
 const reviews = [
   {
-    name: "Michael R.",
+    name: "Daniel K.",
+    location: "Mt. Laurel, NJ",
+    rating: 5,
+    text: "Arch GC handled our two-story rear addition from foundation to final paint. The crew showed up every day, kept the site clean, and the finished space matches the rest of the house perfectly.",
+    project: "Rear Addition",
+  },
+  {
+    name: "Rebecca H.",
+    location: "Cherry Hill, NJ",
+    rating: 5,
+    text: "We had three contractors quote our kitchen. Arch was the only one who walked us through the plan honestly and stuck to the number they gave us. The result speaks for itself.",
+    project: "Kitchen Renovation",
+  },
+  {
+    name: "The Alvarez Family",
+    location: "Princeton, NJ",
+    rating: 5,
+    text: "Our basement was a concrete shell. Now it's a full living space with a custom bar and bathroom. Mehmet and his team treated our home like it was their own.",
+    project: "Basement Build-Out",
+  },
+  {
+    name: "Steve P.",
     location: "Burlington County, NJ",
     rating: 5,
-    text: "Arch General Contracting transformed our outdated kitchen into a modern masterpiece. The attention to detail and craftsmanship was exceptional. Highly recommend!",
-    project: "Kitchen Remodel",
-  },
-  {
-    name: "Sarah T.",
-    location: "Haddonfield, NJ",
-    rating: 5,
-    text: "We hired them for a deck addition and couldn't be happier. Professional team, on time, and the quality is outstanding. Our neighbors are jealous!",
-    project: "Deck Construction",
-  },
-  {
-    name: "James & Lisa M.",
-    location: "Voorhees, NJ",
-    rating: 5,
-    text: "From start to finish, the basement renovation was seamless. They communicated every step and delivered beyond our expectations.",
-    project: "Basement Finishing",
-  },
-  {
-    name: "Patricia D.",
-    location: "Marlton, NJ",
-    rating: 5,
-    text: "Amazing work on our bathroom remodel! The custom cabinetry and tile work is beautiful. True craftsmen who take pride in their work.",
-    project: "Bathroom Remodel",
+    text: "Covered patio came out better than the renderings. Solid framing, real attention to the structural details, and they finished a week ahead of schedule.",
+    project: "Covered Patio",
   },
 ];
 
@@ -99,19 +87,23 @@ const serviceOptions = [
   "Kitchen Remodel",
   "Bathroom Remodel",
   "Basement Finishing",
-  "Custom Carpentry",
+  "General Contracting",
+];
+
+const featured = [
+  photos.kitchenModernIsland,
+  photos.bathroomGlassShower,
+  photos.basementOpenWide,
+  photos.exteriorStoneFront,
+  photos.patioCoveredFramedFront,
+  photos.kitchenGraniteIsland,
 ];
 
 const Index = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    location: "",
-    service: "",
-    message: "",
+    name: "", email: "", phone: "", location: "", service: "", message: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -121,16 +113,12 @@ const Index = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     try {
       await new Promise((r) => setTimeout(r, 500));
       setFormData({ name: "", email: "", phone: "", location: "", service: "", message: "" });
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
-      });
+      toast({ title: "Request received", description: "A member of the Arch GC team will be in touch shortly." });
     } catch {
-      toast({ title: "Error", description: "Please try again.", variant: "destructive" });
+      toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
@@ -138,49 +126,44 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Beautiful kitchen remodel" 
-            className="w-full h-full object-cover"
-          />
+          <img src={photos.kitchenModernIsland} alt="Custom kitchen built by Arch General Contracting" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
         </div>
-        
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl animate-slide-up">
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
               Arch General Contracting LLC
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-6">
-              Transforming Houses Into{" "}
-              <span className="text-gradient">Dream Homes</span>
+              Built Right.{" "}
+              <span className="text-gradient">Built to Last.</span>
             </h1>
             <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-              From kitchens to basements, decks to additions — Arch GC does it all. 
-              Quality craftsmanship you can trust for all your remodeling needs.
+              New Jersey's trusted general contractor for additions, full remodels, and ground-up
+              builds. One team handles your project end to end — from the first sketch to the final
+              walkthrough.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
               <Button variant="hero" size="sm" className="text-xs sm:text-sm sm:h-12 sm:px-8" asChild>
                 <Link to="/contact">
-                  Get Free Estimate
+                  Get a Free Estimate
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
               <Button variant="heroOutline" size="sm" className="text-xs sm:text-sm sm:h-12 sm:px-8" asChild>
-                <Link to="/services">Our Services</Link>
+                <Link to="/services">See What We Build</Link>
               </Button>
             </div>
-            
             <div className="mt-10 flex items-center gap-4">
               <a href="tel:+16092841185" className="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-xs text-secondary-foreground/60 uppercase tracking-wider">Call Us Now</p>
+                  <p className="text-xs text-secondary-foreground/60 uppercase tracking-wider">Talk to a Builder</p>
                   <p className="font-semibold">(609) 284-1185</p>
                 </div>
               </a>
@@ -189,47 +172,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
-              What We Do
+              What We Build
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
-              Our Services
+              General Contracting, Done in House
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              From simple repairs to complete home transformations, we bring expertise and 
-              dedication to every project.
+              Whether you're adding 800 square feet or refinishing every room, our crew manages the
+              framing, the finish work, and everything in between.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Link
-                key={service.title}
-                to={service.href}
-                className="group card-elevated bg-card rounded-lg overflow-hidden"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+              <Link key={service.title} to={service.href} className="group card-elevated bg-card rounded-lg overflow-hidden" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
                 <div className="p-6">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                     <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="font-heading text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {service.description}
-                  </p>
+                  <h3 className="font-heading text-xl font-bold mb-2 group-hover:text-primary transition-colors">{service.title}</h3>
+                  <p className="text-muted-foreground text-sm">{service.description}</p>
                 </div>
               </Link>
             ))}
@@ -238,7 +208,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Button variant="default" size="lg" asChild>
               <Link to="/services">
-                View All Services
+                Browse All Services
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
@@ -246,40 +216,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Preview Section */}
+      {/* About preview */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <img 
-                src={craftsmanImage} 
-                alt="Master carpenter at work" 
-                className="rounded-lg shadow-2xl w-full"
-              />
+              <img src={photos.sidingCrewInstall} alt="Arch GC crew installing siding on a home" className="rounded-lg shadow-2xl w-full" />
               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-xl">
-                <p className="text-4xl font-heading font-bold">10+</p>
-                <p className="text-sm uppercase tracking-wider">Years Experience</p>
+                <p className="text-4xl font-heading font-bold">15+</p>
+                <p className="text-sm uppercase tracking-wider">Years on the Tools</p>
               </div>
             </div>
-            
             <div>
               <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
-                About Us
+                Who We Are
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-                Master Craftsmen Dedicated to Your Vision
+                A Hands-On General Contractor You Can Actually Reach
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                At Arch General Contracting, we believe every home has untapped potential. 
-                Our team of skilled craftsmen brings decades of combined experience to 
-                transform your living spaces into something extraordinary.
+                Arch GC isn't a sales office that hands your project off to whoever's free. Mehmet
+                and his crew are on every job site, swinging hammers and signing off on every detail
+                before it gets called done.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Whether you're dreaming of a modern kitchen, a luxurious bathroom, or an 
-                expanded living space, we have the expertise to bring your vision to life 
-                with precision and care.
+                We've spent more than a decade earning a reputation across South and Central Jersey
+                for honest pricing, clean job sites, and finished work that holds up long after the
+                final invoice is paid.
               </p>
-              
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {benefits.slice(0, 4).map((benefit) => (
                   <div key={benefit} className="flex items-center gap-2">
@@ -288,10 +252,9 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-
               <Button variant="default" size="lg" asChild>
                 <Link to="/about">
-                  Learn More About Us
+                  Get to Know Arch GC
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
@@ -300,37 +263,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Reviews Section */}
+      {/* Reviews */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
-              Testimonials
+              Owner Feedback
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
-              What Our Clients Say
+              What Homeowners Tell Us
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied customers have to say 
-              about their experience with Arch General Contracting.
+              We grow almost entirely through referrals. Here's what some of our recent clients had
+              to say after move-in day.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {reviews.map((review, index) => (
-              <div 
-                key={index}
-                className="bg-card rounded-lg p-6 card-elevated relative"
-              >
+              <div key={index} className="bg-card rounded-lg p-6 card-elevated relative">
                 <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
                 <div className="flex gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                  "{review.text}"
-                </p>
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">"{review.text}"</p>
                 <div className="border-t border-border pt-4">
                   <p className="font-heading font-semibold">{review.name}</p>
                   <p className="text-xs text-muted-foreground">{review.location}</p>
@@ -342,32 +300,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Gallery Preview */}
+      {/* Gallery preview */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
-              Our Work
+              Recent Work
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-              Featured Projects
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">From the Job Site</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Take a look at some of our recent transformations.
+              A snapshot of recently finished kitchens, baths, basements, additions, and outdoor builds.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[kendallParkKitchen, cherryHillShower, princetonBasement, somersetKitchen, mtLaurelBathroom, newBrunswickWindow].map((img, index) => (
-              <div 
-                key={index}
-                className="aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer"
-              >
-                <img 
-                  src={img} 
-                  alt={`Project ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+            {featured.map((img, index) => (
+              <div key={index} className="aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer">
+                <img src={img} alt={`Arch GC project ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               </div>
             ))}
           </div>
@@ -375,7 +324,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Button variant="default" size="lg" asChild>
               <Link to="/gallery">
-                View Full Gallery
+                See the Full Portfolio
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
@@ -383,19 +332,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Contact form */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
-                Get In Touch
+                Start Your Project
               </span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                Request a Free Estimate
+                Tell Us What You're Building
               </h2>
               <p className="text-muted-foreground">
-                Ready to start your project? Fill out the form below and we'll get back to you within 24 hours.
+                Share a few details and we'll come walk the project, scope the work, and put a real
+                number on paper for you.
               </p>
             </div>
 
@@ -403,119 +353,39 @@ const Index = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Full Name *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="John Doe"
-                      required
-                      className="h-12"
-                    />
+                    <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name *</label>
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Jane Smith" required className="h-12" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email Address *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john@example.com"
-                      required
-                      className="h-12"
-                    />
+                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address *</label>
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="jane@example.com" required className="h-12" />
                   </div>
                 </div>
-                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      Phone Number *
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="(609) 284-1185"
-                      required
-                      className="h-12"
-                    />
+                    <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number *</label>
+                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(609) 555-0123" required className="h-12" />
                   </div>
                   <div>
-                    <label htmlFor="location" className="block text-sm font-medium mb-2">
-                      Location (City, State) *
-                    </label>
-                    <Input
-                      id="location"
-                      name="location"
-                      value={formData.location}
-                      onChange={handleChange}
-                      placeholder="Burlington County, NJ"
-                      required
-                      className="h-12"
-                    />
+                    <label htmlFor="location" className="block text-sm font-medium mb-2">Project Location *</label>
+                    <Input id="location" name="location" value={formData.location} onChange={handleChange} placeholder="Mt. Laurel, NJ" required className="h-12" />
                   </div>
                 </div>
-
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium mb-2">
-                    Service Type *
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
-                    onChange={handleChange}
-                    required
-                    className="w-full h-12 px-4 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  >
-                    <option value="">Select a service</option>
+                  <label htmlFor="service" className="block text-sm font-medium mb-2">Project Type *</label>
+                  <select id="service" name="service" value={formData.service} onChange={handleChange} required className="w-full h-12 px-4 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring">
+                    <option value="">Select a project type</option>
                     {serviceOptions.map((service) => (
-                      <option key={service} value={service}>
-                        {service}
-                      </option>
+                      <option key={service} value={service}>{service}</option>
                     ))}
                   </select>
                 </div>
-                
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Project Details *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your project..."
-                    required
-                    rows={4}
-                  />
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">Tell Us About the Project *</label>
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Scope, square footage, timeline, anything we should know..." required rows={4} />
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  variant="default" 
-                  size="lg"
-                  className="w-full"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="w-4 h-4" />
-                    </>
-                  )}
+                <Button type="submit" variant="default" size="lg" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : (<>Send Request<Send className="w-4 h-4" /></>)}
                 </Button>
               </form>
             </div>
@@ -523,20 +393,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 hero-gradient">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-secondary-foreground mb-6">
-            Ready to Start Your Project?
+            Have a Project in Mind?
           </h2>
           <p className="text-secondary-foreground/80 max-w-2xl mx-auto mb-8">
-            Get a free, no-obligation estimate for your next remodeling project. 
-            Our team is ready to bring your vision to life.
+            Estimates are free and there's no pressure. We'll walk the site, talk through your
+            options, and give you a number you can plan around.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
               <Link to="/contact">
-                Request Free Estimate
+                Request an Estimate
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
