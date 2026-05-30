@@ -137,7 +137,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-center">
             <div className="lg:col-span-3 max-w-2xl animate-slide-up">
-              <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
+              <span className="inline-block text-white font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
                 Arch General Contracting LLC
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
