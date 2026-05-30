@@ -550,7 +550,7 @@ const projectsData: Record<string, {
 };
 
 const ProjectDetail = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams({ strict: false }) as { id?: string };
   const project = id ? projectsData[id] : null;
 
   if (!project) {
