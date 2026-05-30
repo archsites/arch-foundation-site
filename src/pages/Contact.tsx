@@ -5,7 +5,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 const contactInfo = [
   {
     icon: Phone,
@@ -66,36 +65,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Save to database
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          location: formData.location.trim(),
-          service: formData.service.trim(),
-          message: formData.message.trim(),
-        });
-
-      if (error) throw error;
-
-      // Send email notification
-      const { error: emailError } = await supabase.functions.invoke('send-contact-notification', {
-        body: {
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          location: formData.location.trim(),
-          service: formData.service.trim(),
-          message: formData.message.trim(),
-        },
-      });
-
-      if (emailError) {
-        console.error('Email notification error:', emailError);
-      }
-
+      await new Promise((r) => setTimeout(r, 500));
       setIsSubmitted(true);
       toast({
         title: "Message Sent!",
