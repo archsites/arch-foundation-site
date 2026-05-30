@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -7,29 +7,27 @@ const Footer = () => {
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Logo & About */}
           <div className="space-y-4">
             <div className="bg-white rounded-lg p-2 inline-block">
-              <img src={logo} alt="Pro Master Carpentry" className="h-14 w-auto" />
+              <img src={logo} alt="Arch General Contracting" className="h-16 w-auto" />
             </div>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed">
-              Pro Master Carpentry LLC delivers exceptional craftsmanship and quality remodeling services. 
-              From kitchens to basements, we transform your vision into reality.
+              Arch General Contracting LLC delivers exceptional craftsmanship and quality remodeling.
+              From kitchens and bathrooms to additions and decks, we build your vision with care.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a href="#" aria-label="Facebook" className="text-secondary-foreground/60 hover:text-primary transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a href="#" aria-label="Instagram" className="text-secondary-foreground/60 hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a href="#" aria-label="LinkedIn" className="text-secondary-foreground/60 hover:text-primary transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="font-heading text-lg font-semibold mb-6 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-3">
@@ -49,7 +47,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="font-heading text-lg font-semibold mb-6 uppercase tracking-wider">Our Services</h4>
             <ul className="space-y-3">
@@ -68,7 +65,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="font-heading text-lg font-semibold mb-6 uppercase tracking-wider">Contact Us</h4>
             <ul className="space-y-4">
@@ -76,25 +72,21 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-secondary-foreground/70">Call Us</p>
-                  <a href="tel:+16094010433" className="font-semibold hover:text-primary transition-colors">
-                    (609) 401-0433
-                  </a>
+                  <a href="tel:+16092841185" className="font-semibold hover:text-primary transition-colors">(609) 284-1185</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-secondary-foreground/70">Email Us</p>
-                  <a href="mailto:promastercarpentry@gmail.com" className="font-semibold hover:text-primary transition-colors text-sm">
-                    promastercarpentry@gmail.com
-                  </a>
+                  <a href="mailto:archbasements@gmail.com" className="font-semibold hover:text-primary transition-colors text-sm">archbasements@gmail.com</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-sm text-secondary-foreground/70">Visit Us</p>
-                  <p className="font-semibold text-sm">35 Regent Road<br />Cherry Hill, NJ</p>
+                  <p className="text-sm text-secondary-foreground/70">Service Area</p>
+                  <p className="font-semibold text-sm">Burlington County, NJ<br/>& Surrounding Areas</p>
                 </div>
               </li>
             </ul>
@@ -102,20 +94,14 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="border-t border-secondary-foreground/10">
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-secondary-foreground/60">
-            © {new Date().getFullYear()} Pro Master Carpentry LLC. All rights reserved.
+            © {new Date().getFullYear()} Arch General Contracting LLC. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link to="/privacy" className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-sm text-secondary-foreground/60 hover:text-primary transition-colors">
-              Terms of Service
-            </Link>
-          </div>
+          <p className="text-sm text-secondary-foreground/60">
+            Licensed &amp; Insured
+          </p>
         </div>
       </div>
     </footer>

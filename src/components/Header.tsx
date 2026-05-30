@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "@tanstack/react-router";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
@@ -11,7 +11,7 @@ const services = [
   { name: "Decks & Patios", href: "/services/decks" },
 ];
 
-const navLinks = [
+const navLinks: { name: string; href: string; hasDropdown?: boolean }[] = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "About Us", href: "/about" },
@@ -29,12 +29,11 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Pro Master Carpentry" className="h-14 w-auto" />
+            <img src={logo} alt="Arch General Contracting" className="h-14 w-auto" />
+            <span className="hidden sm:inline font-heading font-bold text-xl tracking-wider text-primary">ARCH GC</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <div
@@ -55,10 +54,9 @@ const Header = () => {
                   )}
                 </Link>
 
-                {/* Services Dropdown */}
                 {link.hasDropdown && isServicesOpen && (
                   <div className="absolute top-full left-0 pt-2 animate-scale-in">
-                    <div className="bg-background border border-border rounded-lg shadow-xl p-2 min-w-[220px]">
+                    <div className="bg-background border border-border rounded-lg shadow-xl p-2 min-w-[240px]">
                       {services.map((service) => (
                         <Link
                           key={service.name}
@@ -73,7 +71,7 @@ const Header = () => {
                           to="/services"
                           className="block px-4 py-2.5 text-sm font-semibold text-primary hover:bg-primary/10 rounded-md transition-colors"
                         >
-                          View All Services →
+                          All Services →
                         </Link>
                       </div>
                     </div>
@@ -83,28 +81,26 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+16094010433" className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors">
+            <a href="tel:+16092841185" className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
-              (609) 401-0433
+              (609) 284-1185
             </a>
             <Button variant="default" size="lg" asChild>
               <Link to="/contact">Free Estimate</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-foreground"
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-background border-t border-border animate-slide-up">
           <div className="container mx-auto px-4 py-6">
@@ -155,9 +151,9 @@ const Header = () => {
               ))}
             </nav>
             <div className="mt-6 pt-6 border-t border-border flex flex-col gap-4">
-              <a href="tel:+16094010433" className="flex items-center gap-2 text-lg font-semibold text-foreground">
+              <a href="tel:+16092841185" className="flex items-center gap-2 text-lg font-semibold text-foreground">
                 <Phone className="w-5 h-5" />
-                (609) 401-0433
+                (609) 284-1185
               </a>
               <Button variant="default" size="lg" className="w-full" asChild>
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Free Estimate</Link>
