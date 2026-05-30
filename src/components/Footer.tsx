@@ -65,8 +65,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-heading text-lg font-semibold mb-6 uppercase tracking-wider">Contact Us</h4>
+          <div className="col-span-3 md:col-span-2 lg:col-span-1">
+            <h4 className="font-heading text-sm md:text-lg font-semibold mb-3 md:mb-6 uppercase tracking-wider">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary mt-0.5 shrink-0" />
