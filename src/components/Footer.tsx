@@ -12,8 +12,8 @@ const Footer = () => {
               <img src={logo} alt="Arch General Contracting" className="h-16 w-auto" />
             </div>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed">
-              Arch General Contracting LLC delivers exceptional craftsmanship and quality remodeling.
-              From kitchens and bathrooms to additions and decks, we build your vision with care.
+              Arch General Contracting LLC is a New Jersey general contractor specializing in additions,
+              full renovations, and outdoor builds — handled in house from foundation to final walkthrough.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" aria-label="Facebook" className="text-secondary-foreground/60 hover:text-primary transition-colors">

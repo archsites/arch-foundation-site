@@ -92,11 +92,10 @@ const Contact = () => {
             Contact Us
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground mb-6">
-            Get Your Free Estimate
+            Let's Talk About Your Build
           </h1>
           <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto">
-            Ready to start your project? Fill out the form below or give us a call. 
-            We'll get back to you within 24 hours.
+            Send us the details of your project and we'll come walk the site, scope the work, and put a real number on paper — usually within a few business days.
           </p>
         </div>
       </section>
@@ -133,10 +132,10 @@ const Contact = () => {
                 ) : (
                   <>
                     <h2 className="text-2xl font-heading font-bold mb-2">
-                      Request a Free Estimate
+                      Project Inquiry
                     </h2>
                     <p className="text-muted-foreground mb-8">
-                      Fill out the form below and we'll contact you to discuss your project.
+                      Tell us a little about the work and we'll reach out to schedule a free site visit.
                     </p>
                     
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -265,10 +264,9 @@ const Contact = () => {
             {/* Contact Info - Right Side */}
             <div className="lg:col-span-1">
               <div className="bg-card rounded-lg p-8 card-elevated h-full">
-                <h2 className="text-2xl font-heading font-bold mb-6">Get In Touch</h2>
+                <h2 className="text-2xl font-heading font-bold mb-6">Reach Arch GC</h2>
                 <p className="text-muted-foreground mb-8">
-                  Have questions about your project? We're here to help. Reach out 
-                  through any of the channels below.
+                  Prefer to call or email instead? You'll get a real person — usually Mehmet himself.
                 </p>
                 
                 <div className="space-y-6">
