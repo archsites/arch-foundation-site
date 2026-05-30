@@ -335,23 +335,23 @@ const Index = () => {
       </section>
 
       {/* Contact form */}
-      <section className="py-20 bg-muted">
+      <section className="py-12 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+            <div className="text-center mb-8 md:mb-12">
+              <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
                 Start Your Project
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 md:mb-4">
                 Tell Us What You're Building
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Share a few details and we'll come walk the project, scope the work, and put a real
                 number on paper for you.
               </p>
             </div>
 
-            <div className="bg-card rounded-lg p-8 card-elevated">
+            <div className="bg-card rounded-lg p-5 sm:p-8 card-elevated">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
