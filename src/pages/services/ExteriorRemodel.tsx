@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -62,7 +62,7 @@ const ExteriorRemodel = () => {
                 Transform Your Home's Exterior
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Your home's exterior is the first thing people see. Pro Master 
+                Your home's exterior is the first thing people see. Arch GC 
                 Carpentry specializes in creating stunning outdoor spaces and 
                 enhancing curb appeal through quality exterior work.
               </p>

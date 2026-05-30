@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -63,7 +63,7 @@ const Bathrooms = () => {
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 A beautiful bathroom can turn everyday routines into moments of 
-                relaxation. Pro Master Carpentry creates stunning bathrooms that 
+                relaxation. Arch General Contracting creates stunning bathrooms that 
                 combine style and functionality.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">

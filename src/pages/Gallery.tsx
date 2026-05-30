@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -45,7 +45,7 @@ const projects = [
   { id: "5", title: "Full Bathroom Remodel", category: "Bathrooms", image: washingtonTwpFull, location: "Washington Township, NJ" },
   { id: "6", title: "Black & White Bathroom Remodel", category: "Bathrooms", image: voorheesFull, location: "Voorhees, NJ" },
   { id: "7", title: "Modern Bathroom with LED Mirror", category: "Bathrooms", image: burlingtonLed, location: "Burlington, NJ" },
-  { id: "8", title: "Master Bathroom with Freestanding Tub", category: "Bathrooms", image: cherryHillVanity, location: "Cherry Hill, NJ" },
+  { id: "8", title: "Master Bathroom with Freestanding Tub", category: "Bathrooms", image: cherryHillVanity, location: "Burlington County, NJ" },
   { id: "9", title: "Master Bath with Soaking Tub & Shower", category: "Bathrooms", image: cinnaminsonVanity, location: "Cinnaminson, NJ" },
   { id: "10", title: "Custom Built-In Bookshelf Unit", category: "Carpentry", image: medfordBookshelfFront, location: "Medford, NJ" },
   { id: "11", title: "Flooring & Painting Refresh", category: "Interior Remodel", image: delranRoomBlue, location: "Delran, NJ" },
@@ -83,7 +83,7 @@ const Gallery = () => {
           </h1>
           <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto">
             Browse through our portfolio of completed projects and see the quality 
-            of work that sets Pro Master Carpentry apart.
+            of work that sets Arch General Contracting apart.
           </p>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -62,7 +62,7 @@ const Additions = () => {
                 Expand Your Living Space
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Need more room? Pro Master Carpentry specializes in building high-quality 
+                Need more room? Arch General Contracting specializes in building high-quality 
                 home additions that seamlessly integrate with your existing structure. 
                 Whether you need an extra bedroom, a home office, or a complete second 
                 story, we have the expertise to make it happen.

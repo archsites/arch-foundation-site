@@ -10,19 +10,19 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    detail: "(609) 401-0433",
-    href: "tel:+16094010433",
+    detail: "(609) 284-1185",
+    href: "tel:+16092841185",
   },
   {
     icon: Mail,
     title: "Email",
-    detail: "promastercarpentry@gmail.com",
-    href: "mailto:promastercarpentry@gmail.com",
+    detail: "archbasements@gmail.com",
+    href: "mailto:archbasements@gmail.com",
   },
   {
     icon: MapPin,
     title: "Address",
-    detail: "35 Regent Road, Cherry Hill, NJ",
+    detail: ", Burlington County, NJ",
     href: "#",
   },
   {
@@ -227,7 +227,7 @@ const Contact = () => {
                             name="location"
                             value={formData.location}
                             onChange={handleChange}
-                            placeholder="Cherry Hill, NJ"
+                            placeholder="Burlington County, NJ"
                             required
                             className="h-12"
                           />

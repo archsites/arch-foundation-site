@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -63,7 +63,7 @@ const Basements = () => {
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 Your basement represents one of the biggest opportunities to add 
-                living space to your home. Pro Master Carpentry specializes in 
+                living space to your home. Arch General Contracting specializes in 
                 transforming dark, unused basements into beautiful, functional areas.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">

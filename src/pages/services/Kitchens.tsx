@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -62,7 +62,7 @@ const Kitchens = () => {
                 The Heart of Your Home
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                The kitchen is where families gather and memories are made. Pro Master 
+                The kitchen is where families gather and memories are made. Arch GC 
                 Carpentry specializes in creating beautiful, functional kitchens that 
                 work for your lifestyle.
               </p>

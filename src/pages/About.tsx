@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Award, Users, Clock, Shield } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -48,7 +48,7 @@ const About = () => {
             Master Craftsmen<br />Building Your Dreams
           </h1>
           <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto">
-            Pro Master Carpentry LLC is dedicated to transforming homes with exceptional 
+            Arch General Contracting LLC is dedicated to transforming homes with exceptional 
             craftsmanship and attention to detail.
           </p>
         </div>
@@ -66,7 +66,7 @@ const About = () => {
                 Building Excellence Since Day One
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Pro Master Carpentry was founded with a simple mission: to deliver outstanding 
+                Arch General Contracting was founded with a simple mission: to deliver outstanding 
                 craftsmanship that exceeds expectations. What started as a small operation has 
                 grown into a trusted name in home remodeling and carpentry services.
               </p>
@@ -141,7 +141,7 @@ const About = () => {
               What Sets Us Apart
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We're not just another remodeling company. Here's what makes Pro Master 
+              We're not just another remodeling company. Here's what makes Arch GC 
               Carpentry the right choice for your project.
             </p>
           </div>

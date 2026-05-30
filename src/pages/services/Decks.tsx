@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -63,7 +63,7 @@ const Decks = () => {
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 A well-designed deck or patio extends your living space into the 
-                great outdoors. Pro Master Carpentry builds custom outdoor structures 
+                great outdoors. Arch General Contracting builds custom outdoor structures 
                 that are as beautiful as they are functional.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">

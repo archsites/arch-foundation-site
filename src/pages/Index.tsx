@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -64,9 +64,9 @@ const benefits = [
 const reviews = [
   {
     name: "Michael R.",
-    location: "Cherry Hill, NJ",
+    location: "Burlington County, NJ",
     rating: 5,
-    text: "Pro Master Carpentry transformed our outdated kitchen into a modern masterpiece. The attention to detail and craftsmanship was exceptional. Highly recommend!",
+    text: "Arch General Contracting transformed our outdated kitchen into a modern masterpiece. The attention to detail and craftsmanship was exceptional. Highly recommend!",
     project: "Kitchen Remodel",
   },
   {
@@ -183,14 +183,14 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl animate-slide-up">
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
-              Pro Master Carpentry LLC
+              Arch General Contracting LLC
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-6">
               Transforming Houses Into{" "}
               <span className="text-gradient">Dream Homes</span>
             </h1>
             <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
-              From kitchens to basements, decks to additions — Pro Master does it all. 
+              From kitchens to basements, decks to additions — Arch GC does it all. 
               Quality craftsmanship you can trust for all your remodeling needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
@@ -206,13 +206,13 @@ const Index = () => {
             </div>
             
             <div className="mt-10 flex items-center gap-4">
-              <a href="tel:+16094010433" className="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
+              <a href="tel:+16092841185" className="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-xs text-secondary-foreground/60 uppercase tracking-wider">Call Us Now</p>
-                  <p className="font-semibold">(609) 401-0433</p>
+                  <p className="font-semibold">(609) 284-1185</p>
                 </div>
               </a>
             </div>
@@ -301,7 +301,7 @@ const Index = () => {
                 Master Craftsmen Dedicated to Your Vision
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                At Pro Master Carpentry, we believe every home has untapped potential. 
+                At Arch General Contracting, we believe every home has untapped potential. 
                 Our team of skilled craftsmen brings decades of combined experience to 
                 transform your living spaces into something extraordinary.
               </p>
@@ -343,7 +343,7 @@ const Index = () => {
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Don't just take our word for it. Here's what our satisfied customers have to say 
-              about their experience with Pro Master Carpentry.
+              about their experience with Arch General Contracting.
             </p>
           </div>
 
@@ -475,7 +475,7 @@ const Index = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      placeholder="(609) 401-0433"
+                      placeholder="(609) 284-1185"
                       required
                       className="h-12"
                     />
@@ -489,7 +489,7 @@ const Index = () => {
                       name="location"
                       value={formData.location}
                       onChange={handleChange}
-                      placeholder="Cherry Hill, NJ"
+                      placeholder="Burlington County, NJ"
                       required
                       className="h-12"
                     />
@@ -572,9 +572,9 @@ const Index = () => {
               </Link>
             </Button>
             <Button variant="hero" size="xl" asChild>
-              <a href="tel:+16094010433">
+              <a href="tel:+16092841185">
                 <Phone className="w-5 h-5" />
-                Call (609) 401-0433
+                Call (609) 284-1185
               </a>
             </Button>
           </div>

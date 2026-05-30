@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Home, Paintbrush, Hammer, Wrench, Bath, ChefHat, Building2, TreeDeciduous } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -111,7 +111,7 @@ const Services = () => {
             Professional Carpentry &<br />Remodeling Services
           </h1>
           <p className="text-lg text-secondary-foreground/80 max-w-3xl mx-auto">
-            From kitchens to basements, decks to additions — Pro Master does it all. 
+            From kitchens to basements, decks to additions — Arch GC does it all. 
             Explore our comprehensive range of carpentry and remodeling services.
           </p>
         </div>

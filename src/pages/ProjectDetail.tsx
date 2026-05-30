@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, MapPin, Calendar } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -257,9 +257,9 @@ const projectsData: Record<string, {
   "8": {
     title: "Master Bathroom with Freestanding Tub",
     category: "Bathrooms",
-    location: "Cherry Hill, NJ",
+    location: "Burlington County, NJ",
     completedDate: "2024",
-    description: "A luxurious master bathroom remodel in Cherry Hill, NJ featuring a stunning freestanding soaking tub with a matte black floor-mounted faucet, a spacious walk-in shower with textured gray subway tile accent wall and marble hexagon mosaic floor, and an elegant gray double vanity with white quartz countertop. The space also includes a separate half bath with a matching gray vanity and black fixtures throughout.",
+    description: "A luxurious master bathroom remodel in Burlington County, NJ featuring a stunning freestanding soaking tub with a matte black floor-mounted faucet, a spacious walk-in shower with textured gray subway tile accent wall and marble hexagon mosaic floor, and an elegant gray double vanity with white quartz countertop. The space also includes a separate half bath with a matching gray vanity and black fixtures throughout.",
     details: [
       "Freestanding soaking tub with matte black floor-mounted faucet",
       "Spacious walk-in shower with frameless glass enclosure and black hardware",

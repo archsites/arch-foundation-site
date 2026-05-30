@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -66,7 +66,7 @@ const InteriorRemodel = () => {
                 Complete Interior Transformations
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                At Pro Master Carpentry, we specialize in transforming interior spaces 
+                At Arch General Contracting, we specialize in transforming interior spaces 
                 through expert craftsmanship. Whether you're looking to add character 
                 with wainscoting and ceiling beams, create functional storage solutions, 
                 or completely reimagine your living areas, our team has the skills to 
