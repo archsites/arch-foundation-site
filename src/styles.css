@@ -52,26 +52,27 @@
   --popover: 0 0% 100%;
   --popover-foreground: 215 30% 12%;
 
-  /* Bright primary blue */
-  --primary: 212 90% 48%;
+  /* Arch GC slate blue #4a5779 */
+  --primary: 223 24% 38%;
   --primary-foreground: 0 0% 100%;
 
-  /* Deep navy used for hero/footer backgrounds */
-  --secondary: 217 45% 18%;
+  /* Deeper slate for hero/footer backgrounds */
+  --secondary: 223 28% 22%;
   --secondary-foreground: 0 0% 100%;
 
-  --muted: 210 30% 96%;
-  --muted-foreground: 215 16% 45%;
+  --muted: 223 20% 96%;
+  --muted-foreground: 223 12% 42%;
 
-  --accent: 212 90% 48%;
+  --accent: 223 24% 38%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 214 25% 90%;
-  --input: 214 25% 90%;
-  --ring: 212 90% 48%;
+  --border: 223 18% 88%;
+  --input: 223 18% 88%;
+  --ring: 223 24% 38%;
+
 }
 
 @layer base {
