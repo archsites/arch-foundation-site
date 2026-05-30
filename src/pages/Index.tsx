@@ -127,21 +127,23 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center">
+      <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
           <img src={photos.kitchenModernIsland} alt="Custom kitchen built by Arch General Contracting" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
+          {/* Mobile: near-solid navy overlay for legibility. Desktop: gradient. */}
+          <div className="absolute inset-0 bg-secondary/80 md:hidden" />
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl animate-slide-up">
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
               Arch General Contracting LLC
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
               Built Right.{" "}
               <span className="text-gradient">Built to Last.</span>
             </h1>
-            <p className="text-lg text-secondary-foreground/80 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-secondary-foreground/90 mb-6 sm:mb-8 leading-relaxed">
               New Jersey's trusted general contractor for additions, full remodels, and ground-up
               builds. One team handles your project end to end — from the first sketch to the final
               walkthrough.
@@ -157,14 +159,14 @@ const Index = () => {
                 <Link to="/services">See What We Build</Link>
               </Button>
             </div>
-            <div className="mt-10 flex items-center gap-4">
+            <div className="mt-6 sm:mt-10 flex items-center gap-4">
               <a href="tel:+16092841185" className="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-primary" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-primary/30 flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <div>
-                  <p className="text-xs text-secondary-foreground/60 uppercase tracking-wider">Talk to a Builder</p>
-                  <p className="font-semibold">(609) 284-1185</p>
+                  <p className="text-[10px] sm:text-xs text-secondary-foreground/70 uppercase tracking-wider">Talk to a Builder</p>
+                  <p className="font-semibold text-sm sm:text-base">(609) 284-1185</p>
                 </div>
               </a>
             </div>
@@ -173,39 +175,39 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <section className="py-20 bg-muted">
+      <section className="py-12 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
               What We Build
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 md:mb-4">
               General Contracting, Done in House
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
               Whether you're adding 800 square feet or refinishing every room, our crew manages the
               framing, the finish work, and everything in between.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {services.map((service, index) => (
               <Link key={service.title} to={service.href} className="group card-elevated bg-card rounded-lg overflow-hidden" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <div className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <service.icon className="w-6 h-6 text-primary" />
+                <div className="p-3 sm:p-6">
+                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2 sm:mb-4">
+                    <service.icon className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
                   </div>
-                  <h3 className="font-heading text-xl font-bold mb-2 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm">{service.description}</p>
+                  <h3 className="font-heading text-sm sm:text-xl font-bold mb-1 sm:mb-2 group-hover:text-primary transition-colors leading-tight">{service.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm line-clamp-3 sm:line-clamp-none">{service.description}</p>
                 </div>
               </Link>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 md:mt-12">
             <Button variant="default" size="lg" asChild>
               <Link to="/services">
                 Browse All Services
@@ -217,7 +219,7 @@ const Index = () => {
       </section>
 
       {/* About preview */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -264,35 +266,35 @@ const Index = () => {
       </section>
 
       {/* Reviews */}
-      <section className="py-20 bg-muted">
+      <section className="py-12 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
               Owner Feedback
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 md:mb-4">
               What Homeowners Tell Us
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
               We grow almost entirely through referrals. Here's what some of our recent clients had
               to say after move-in day.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {reviews.map((review, index) => (
-              <div key={index} className="bg-card rounded-lg p-6 card-elevated relative">
-                <Quote className="absolute top-4 right-4 w-8 h-8 text-primary/20" />
-                <div className="flex gap-1 mb-4">
+              <div key={index} className="bg-card rounded-lg p-4 sm:p-6 card-elevated relative">
+                <Quote className="absolute top-3 right-3 sm:top-4 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 text-primary/20" />
+                <div className="flex gap-1 mb-3 sm:mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    <Star key={i} className="w-3 h-3 sm:w-5 sm:h-5 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">"{review.text}"</p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-heading font-semibold">{review.name}</p>
-                  <p className="text-xs text-muted-foreground">{review.location}</p>
-                  <p className="text-xs text-primary mt-1">{review.project}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed line-clamp-5 sm:line-clamp-none">"{review.text}"</p>
+                <div className="border-t border-border pt-3 sm:pt-4">
+                  <p className="font-heading font-semibold text-sm sm:text-base">{review.name}</p>
+                  <p className="text-[11px] sm:text-xs text-muted-foreground">{review.location}</p>
+                  <p className="text-[11px] sm:text-xs text-primary mt-1">{review.project}</p>
                 </div>
               </div>
             ))}
@@ -301,19 +303,19 @@ const Index = () => {
       </section>
 
       {/* Gallery preview */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
               Recent Work
             </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">From the Job Site</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 md:mb-4">From the Job Site</h2>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
               A snapshot of recently finished kitchens, baths, basements, additions, and outdoor builds.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {featured.map((img, index) => (
               <div key={index} className="aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer">
                 <img src={img} alt={`Arch GC project ${index + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
@@ -321,7 +323,7 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 md:mt-12">
             <Button variant="default" size="lg" asChild>
               <Link to="/gallery">
                 See the Full Portfolio
@@ -333,23 +335,23 @@ const Index = () => {
       </section>
 
       {/* Contact form */}
-      <section className="py-20 bg-muted">
+      <section className="py-12 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+            <div className="text-center mb-8 md:mb-12">
+              <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
                 Start Your Project
               </span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 md:mb-4">
                 Tell Us What You're Building
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground">
                 Share a few details and we'll come walk the project, scope the work, and put a real
                 number on paper for you.
               </p>
             </div>
 
-            <div className="bg-card rounded-lg p-8 card-elevated">
+            <div className="bg-card rounded-lg p-5 sm:p-8 card-elevated">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
