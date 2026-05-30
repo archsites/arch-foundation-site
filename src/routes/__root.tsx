@@ -80,14 +80,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "ARCH TEMP" },
+      { name: "description", content: "Arch GC Brilliance is a professional, multi-page website for a general contracting company." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "ARCH TEMP" },
+      { property: "og:description", content: "Arch GC Brilliance is a professional, multi-page website for a general contracting company." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "ARCH TEMP" },
+      { name: "twitter:description", content: "Arch GC Brilliance is a professional, multi-page website for a general contracting company." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Z2MCIpwUabf5d8JZ4S15c43oy4g1/social-images/social-1780156727815-General_COntracting.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/Z2MCIpwUabf5d8JZ4S15c43oy4g1/social-images/social-1780156727815-General_COntracting.webp" },
     ],
     links: [
       {
