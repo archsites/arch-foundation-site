@@ -29,10 +29,10 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Arch General Contracting" className="h-14 w-auto" />
-            <span className="hidden sm:inline font-heading font-bold text-xl tracking-wider text-primary">ARCH GC</span>
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Arch General Contracting" className="h-12 w-auto" />
           </Link>
+
 
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
