@@ -175,39 +175,39 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <section className="py-20 bg-muted">
+      <section className="py-12 md:py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block text-primary font-semibold text-sm uppercase tracking-widest mb-4">
+          <div className="text-center mb-10 md:mb-16">
+            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
               What We Build
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 md:mb-4">
               General Contracting, Done in House
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
               Whether you're adding 800 square feet or refinishing every room, our crew manages the
               framing, the finish work, and everything in between.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {services.map((service, index) => (
               <Link key={service.title} to={service.href} className="group card-elevated bg-card rounded-lg overflow-hidden" style={{ animationDelay: `${index * 100}ms` }}>
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <div className="p-6">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <service.icon className="w-6 h-6 text-primary" />
+                <div className="p-3 sm:p-6">
+                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-2 sm:mb-4">
+                    <service.icon className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
                   </div>
-                  <h3 className="font-heading text-xl font-bold mb-2 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm">{service.description}</p>
+                  <h3 className="font-heading text-sm sm:text-xl font-bold mb-1 sm:mb-2 group-hover:text-primary transition-colors leading-tight">{service.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm line-clamp-3 sm:line-clamp-none">{service.description}</p>
                 </div>
               </Link>
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 md:mt-12">
             <Button variant="default" size="lg" asChild>
               <Link to="/services">
                 Browse All Services
