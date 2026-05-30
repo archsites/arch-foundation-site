@@ -134,45 +134,76 @@ const Index = () => {
           <div className="absolute inset-0 bg-secondary/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl animate-slide-up">
-            <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
-              Arch General Contracting LLC
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
-              Built Right.{" "}
-              <span className="text-gradient">Built to Last.</span>
-            </h1>
-            <p className="text-base sm:text-lg text-secondary-foreground/90 mb-6 sm:mb-8 leading-relaxed">
-              New Jersey's trusted general contractor for additions, full remodels, and ground-up
-              builds. One team handles your project end to end — from the first sketch to the final
-              walkthrough.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
-              <Button variant="hero" size="sm" className="text-xs sm:text-sm sm:h-12 sm:px-8" asChild>
-                <Link to="/contact">
-                  Get a Free Estimate
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-              <Button variant="heroOutline" size="sm" className="text-xs sm:text-sm sm:h-12 sm:px-8" asChild>
-                <Link to="/services">See What We Build</Link>
-              </Button>
+        <div className="container mx-auto px-4 relative z-10 py-12 md:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10 items-center">
+            <div className="lg:col-span-3 max-w-2xl animate-slide-up">
+              <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
+                Arch General Contracting LLC
+              </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-4 sm:mb-6">
+                Built Right.{" "}
+                <span className="text-gradient">Built to Last.</span>
+              </h1>
+              <p className="text-base sm:text-lg text-secondary-foreground/90 mb-6 sm:mb-8 leading-relaxed">
+                New Jersey's trusted general contractor for additions, full remodels, and ground-up
+                builds. One team handles your project end to end — from the first sketch to the final
+                walkthrough.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+                <Button variant="hero" size="sm" className="text-xs sm:text-sm sm:h-12 sm:px-8" asChild>
+                  <Link to="/contact">
+                    Get a Free Estimate
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+                <Button variant="heroOutline" size="sm" className="text-xs sm:text-sm sm:h-12 sm:px-8" asChild>
+                  <Link to="/services">See What We Build</Link>
+                </Button>
+              </div>
+              <div className="mt-6 sm:mt-10 flex items-center gap-4">
+                <a href="tel:+16092841185" className="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-primary/30 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] sm:text-xs text-secondary-foreground/70 uppercase tracking-wider">Talk to a Builder</p>
+                    <p className="font-semibold text-sm sm:text-base">(609) 284-1185</p>
+                  </div>
+                </a>
+              </div>
             </div>
-            <div className="mt-6 sm:mt-10 flex items-center gap-4">
-              <a href="tel:+16092841185" className="flex items-center gap-2 text-secondary-foreground hover:text-primary transition-colors">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-primary/30 flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-primary-foreground" />
+
+            {/* Compact contact form */}
+            <div className="lg:col-span-2 w-full animate-slide-up">
+              <div className="bg-card/95 backdrop-blur rounded-lg p-5 sm:p-6 card-elevated">
+                <div className="mb-4">
+                  <span className="inline-block text-primary font-semibold text-xs uppercase tracking-widest mb-1">
+                    Start Your Project
+                  </span>
+                  <h2 className="text-lg sm:text-xl font-heading font-bold">Request a Free Estimate</h2>
                 </div>
-                <div>
-                  <p className="text-[10px] sm:text-xs text-secondary-foreground/70 uppercase tracking-wider">Talk to a Builder</p>
-                  <p className="font-semibold text-sm sm:text-base">(609) 284-1185</p>
-                </div>
-              </a>
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <Input name="name" value={formData.name} onChange={handleChange} placeholder="Full Name" required className="h-10" />
+                  <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Email" required className="h-10" />
+                  <Input name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="Phone" required className="h-10" />
+                  <select name="service" value={formData.service} onChange={handleChange} required className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+                    <option value="">Project Type</option>
+                    {serviceOptions.map((s) => (
+                      <option key={s} value={s}>{s}</option>
+                    ))}
+                  </select>
+                  <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about the project..." required rows={3} />
+                  <Button type="submit" variant="default" size="default" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : (<>Send Request<Send className="w-4 h-4" /></>)}
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* (Previously a large "Start Your Project" form section lived here — moved into the hero) */}
 
       {/* Services */}
       <section className="py-12 md:py-20 bg-muted">
