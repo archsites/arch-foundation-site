@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-6 uppercase tracking-wider">Our Services</h4>
+            <h4 className="font-heading text-sm md:text-lg font-semibold mb-3 md:mb-6 uppercase tracking-wider">Our Services</h4>
             <ul className="space-y-3">
               {[
                 { name: "Interior Remodel", href: "/services/interior" },
