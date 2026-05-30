@@ -28,7 +28,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="order-3 lg:order-2">
+
             <h4 className="font-heading text-sm md:text-lg font-semibold mb-3 md:mb-6 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-3">
               {[
