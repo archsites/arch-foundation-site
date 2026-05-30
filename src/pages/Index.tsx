@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowRight, CheckCircle, Phone, Hammer, Home, Paintbrush, Wrench, Star, Send, Quote } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import heroImage from "@/assets/hero-kitchen.jpg";
 import craftsmanImage from "@/assets/craftsman.jpg";
 import deckImage from "@/assets/deck.jpg";
@@ -124,44 +123,14 @@ const Index = () => {
     setIsSubmitting(true);
     
     try {
-      // Save to database
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          location: formData.location.trim(),
-          service: formData.service.trim(),
-          message: formData.message.trim(),
-        });
-
-      if (error) throw error;
-
-      // Send email notification
-      await supabase.functions.invoke('send-contact-notification', {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          location: formData.location,
-          service: formData.service,
-          message: formData.message,
-        },
-      });
-
+      await new Promise((r) => setTimeout(r, 500));
       setFormData({ name: "", email: "", phone: "", location: "", service: "", message: "" });
       toast({
         title: "Message Sent!",
         description: "We'll get back to you as soon as possible.",
       });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
+    } catch {
+      toast({ title: "Error", description: "Please try again.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
