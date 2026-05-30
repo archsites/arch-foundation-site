@@ -365,66 +365,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact form */}
-      <section className="py-12 md:py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
-              <span className="inline-block text-primary font-semibold text-xs sm:text-sm uppercase tracking-widest mb-3 md:mb-4">
-                Start Your Project
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold mb-3 md:mb-4">
-                Tell Us What You're Building
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                Share a few details and we'll come walk the project, scope the work, and put a real
-                number on paper for you.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-lg p-5 sm:p-8 card-elevated">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name *</label>
-                    <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Jane Smith" required className="h-12" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address *</label>
-                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="jane@example.com" required className="h-12" />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number *</label>
-                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="(609) 555-0123" required className="h-12" />
-                  </div>
-                  <div>
-                    <label htmlFor="location" className="block text-sm font-medium mb-2">Project Location *</label>
-                    <Input id="location" name="location" value={formData.location} onChange={handleChange} placeholder="Mt. Laurel, NJ" required className="h-12" />
-                  </div>
-                </div>
-                <div>
-                  <label htmlFor="service" className="block text-sm font-medium mb-2">Project Type *</label>
-                  <select id="service" name="service" value={formData.service} onChange={handleChange} required className="w-full h-12 px-4 rounded-md border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring">
-                    <option value="">Select a project type</option>
-                    {serviceOptions.map((service) => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Tell Us About the Project *</label>
-                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Scope, square footage, timeline, anything we should know..." required rows={4} />
-                </div>
-                <Button type="submit" variant="default" size="lg" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : (<>Send Request<Send className="w-4 h-4" /></>)}
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="py-20 hero-gradient">
