@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
-          <div className="space-y-4 col-span-3 md:col-span-2 lg:col-span-1">
+          <div className="space-y-4 col-span-3 md:col-span-2 lg:col-span-1 order-2 lg:order-1">
             <div className="bg-white rounded-lg p-2 inline-block">
               <img src={logo} alt="Arch General Contracting" className="h-16 w-auto" />
             </div>
@@ -28,7 +28,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="order-3 lg:order-2">
+
             <h4 className="font-heading text-sm md:text-lg font-semibold mb-3 md:mb-6 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-3">
               {[
@@ -47,7 +48,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="order-4 lg:order-3">
+
             <h4 className="font-heading text-sm md:text-lg font-semibold mb-3 md:mb-6 uppercase tracking-wider">Our Services</h4>
             <ul className="space-y-3">
               {[
@@ -65,7 +67,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="col-span-3 md:col-span-2 lg:col-span-1">
+          <div className="col-span-3 md:col-span-2 lg:col-span-1 order-1 lg:order-4">
             <h4 className="font-heading text-sm md:text-lg font-semibold mb-3 md:mb-6 uppercase tracking-wider">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
