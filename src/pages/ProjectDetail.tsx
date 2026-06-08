@@ -34,7 +34,7 @@ const projectsData: Record<string, Project> = {
   "2": {
     title: "Warm Wood Kitchen Refresh",
     category: "Kitchens",
-    location: "South Jersey",
+    location: "New Jersey",
     completedDate: "2023",
     description: "A budget-conscious kitchen update that kept the existing footprint but transformed the look. We refaced cabinetry, added a working island, and opened the sightline to the adjacent dining area.",
     details: [
@@ -127,7 +127,7 @@ const projectsData: Record<string, Project> = {
   "8": {
     title: "Stone-Front Exterior Transformation",
     category: "Exterior Remodel",
-    location: "South Jersey",
+    location: "New Jersey",
     completedDate: "2024",
     description: "An exterior remodel that took a dated facade and gave it a modern stone-and-siding look. We rebuilt the front entry, added a stone veneer wall, and re-clad the rest of the home.",
     details: [
@@ -173,7 +173,7 @@ const projectsData: Record<string, Project> = {
   "11": {
     title: "New Concrete Patio Build",
     category: "Decks & Patios",
-    location: "South Jersey",
+    location: "New Jersey",
     completedDate: "2024",
     description: "Site prep, forming, rebar grid, and a full poured-concrete pad — the foundation for a future covered outdoor space.",
     details: [

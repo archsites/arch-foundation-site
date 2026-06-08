@@ -9,16 +9,16 @@ const categories = ["All", "Additions", "Kitchens", "Bathrooms", "Basements", "I
 
 const projects = [
   { id: "1", title: "Modern Kitchen Renovation", category: "Kitchens", image: photos.kitchenModernIsland, location: "Central NJ" },
-  { id: "2", title: "Warm Wood Kitchen Refresh", category: "Kitchens", image: photos.kitchenWoodIsland, location: "South Jersey" },
+  { id: "2", title: "Warm Wood Kitchen Refresh", category: "Kitchens", image: photos.kitchenWoodIsland, location: "New Jersey" },
   { id: "3", title: "Master Bath with Glass Enclosure", category: "Bathrooms", image: photos.bathroomGlassShower, location: "Mt. Laurel, NJ" },
   { id: "4", title: "Finished Basement with Custom Bar", category: "Basements", image: photos.basementOpenWide, location: "Princeton, NJ" },
   { id: "5", title: "Two-Story Rear Addition", category: "Additions", image: photos.additionRearComplete, location: "Burlington County, NJ" },
   { id: "6", title: "Vaulted Great Room Addition", category: "Additions", image: photos.additionGreatRoomVaulted, location: "Cherry Hill, NJ" },
   { id: "7", title: "Whole-House Interior Reframe", category: "Interior Remodel", image: photos.interiorFramingOpen, location: "Central NJ" },
-  { id: "8", title: "Stone-Front Exterior Transformation", category: "Exterior Remodel", image: photos.exteriorStoneFront, location: "South Jersey" },
+  { id: "8", title: "Stone-Front Exterior Transformation", category: "Exterior Remodel", image: photos.exteriorStoneFront, location: "New Jersey" },
   { id: "9", title: "Full Re-Siding & Wrap", category: "Exterior Remodel", image: photos.sidingCrewInstall, location: "Burlington County, NJ" },
   { id: "10", title: "Covered Outdoor Living Patio", category: "Decks & Patios", image: photos.patioCoveredFramedFront, location: "Mt. Laurel, NJ" },
-  { id: "11", title: "New Concrete Patio Build", category: "Decks & Patios", image: photos.patioRebarPad, location: "South Jersey" },
+  { id: "11", title: "New Concrete Patio Build", category: "Decks & Patios", image: photos.patioRebarPad, location: "New Jersey" },
   { id: "12", title: "Roof & Structural Replacement", category: "Exterior Remodel", image: photos.roofingInProgress, location: "Central NJ" },
   { id: "13", title: "Living & Dining Room Refresh", category: "Interior Remodel", image: photos.interiorLivingDining, location: "Burlington County, NJ" },
 ];

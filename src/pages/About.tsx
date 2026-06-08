@@ -8,7 +8,7 @@ const values = [
   {
     icon: Award,
     title: "Built by the Owner",
-    description: "Mehmet runs every project personally — you talk to the builder, not a salesperson.",
+    description: "Yaqup runs every project personally — you talk to the builder, not a salesperson.",
   },
   {
     icon: Users,
@@ -29,9 +29,9 @@ const values = [
 
 const stats = [
   { number: "250+", label: "Homes Built or Renovated" },
-  { number: "15+", label: "Years of Field Experience" },
+  { number: "20+", label: "Years of Field Experience" },
   { number: "98%", label: "Referral-Driven Business" },
-  { number: "0", label: "Open Liens or Complaints" },
+  { number: "A+", label: "BBB Accredited" },
 ];
 
 const About = () => {
@@ -66,7 +66,7 @@ const About = () => {
                 Started on the Tools. Still on the Tools.
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Arch GC was founded by Mehmet after more than a decade of framing, finishing, and
+                Arch GC was founded by Yaqup after more than two decades of framing, finishing, and
                 project-managing other contractors' jobs. He started the company on a simple promise:
                 show up when you say you will, build it the way you said you would, and never leave
                 a homeowner chasing answers.
@@ -99,7 +99,7 @@ const About = () => {
               <img src={photos.sidingCrewInstall} alt="Arch GC crew at work on a job site" className="rounded-lg shadow-2xl w-full" />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-xl">
                 <p className="text-4xl font-heading font-bold">250+</p>
-                <p className="text-sm uppercase tracking-wider">Projects Delivered</p>
+                <p className="text-sm uppercase tracking-wider">Homes Built or Renovated</p>
               </div>
             </div>
           </div>
