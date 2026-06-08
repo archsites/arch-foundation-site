@@ -101,9 +101,16 @@ const Footer = () => {
           <p className="text-sm text-secondary-foreground/60">
             © {new Date().getFullYear()} Arch General Contracting LLC. All rights reserved.
           </p>
-          <p className="text-sm text-secondary-foreground/60">
-            Licensed &amp; Insured
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="flex items-center gap-1.5 text-sm text-secondary-foreground/60">
+              <Award className="w-4 h-4 text-primary" />
+              A+ BBB Accredited
+            </p>
+            <span className="hidden md:inline text-secondary-foreground/20">|</span>
+            <p className="text-sm text-secondary-foreground/60">
+              Licensed &amp; Insured
+            </p>
+          </div>
         </div>
       </div>
     </footer>
