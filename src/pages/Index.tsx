@@ -67,7 +67,7 @@ const reviews = [
     name: "The Alvarez Family",
     location: "Princeton, NJ",
     rating: 5,
-    text: "Our basement was a concrete shell. Now it's a full living space with a custom bar and bathroom. Mehmet and his team treated our home like it was their own.",
+    text: "Our basement was a concrete shell. Now it's a full living space with a custom bar and bathroom. Yaqup and his team treated our home like it was their own.",
     project: "Basement Build-Out",
   },
   {
@@ -256,7 +256,7 @@ const Index = () => {
             <div className="relative">
               <img src={photos.sidingCrewInstall} alt="Arch GC crew installing siding on a home" className="rounded-lg shadow-2xl w-full" />
               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-xl">
-                <p className="text-4xl font-heading font-bold">15+</p>
+                <p className="text-4xl font-heading font-bold">20+</p>
                 <p className="text-sm uppercase tracking-wider">Years on the Tools</p>
               </div>
             </div>
@@ -268,12 +268,12 @@ const Index = () => {
                 A Hands-On General Contractor You Can Actually Reach
               </h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Arch GC isn't a sales office that hands your project off to whoever's free. Mehmet
+                Arch GC isn't a sales office that hands your project off to whoever's free. Yaqup
                 and his crew are on every job site, swinging hammers and signing off on every detail
                 before it gets called done.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                We've spent more than a decade earning a reputation across South and Central Jersey
+                We've spent more than a decade earning a reputation across New Jersey
                 for honest pricing, clean job sites, and finished work that holds up long after the
                 final invoice is paid.
               </p>

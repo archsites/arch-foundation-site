@@ -266,7 +266,7 @@ const Contact = () => {
               <div className="bg-card rounded-lg p-8 card-elevated h-full">
                 <h2 className="text-2xl font-heading font-bold mb-6">Reach Arch GC</h2>
                 <p className="text-muted-foreground mb-8">
-                  Prefer to call or email instead? You'll get a real person — usually Mehmet himself.
+                  Prefer to call or email instead? You'll get a real person — usually Yaqup himself.
                 </p>
                 
                 <div className="space-y-6">
