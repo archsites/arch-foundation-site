@@ -57,7 +57,7 @@ const Gallery = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((project) => (
-              <Link key={project.id} to={`/gallery/${project.id}`} className="group overflow-hidden rounded-lg card-elevated">
+              <Link key={project.id} to="/gallery/$id" params={{ id: project.id }} className="group overflow-hidden rounded-lg card-elevated">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
