@@ -186,7 +186,7 @@ const Index = () => {
                   <Input name="name" value={formData.name} onChange={handleChange} placeholder="Full Name" required className="h-10" />
                   <Input name="email" type="email" value={formData.email} onChange={handleChange} placeholder="Email" required className="h-10" />
                   <Input name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="Phone" required className="h-10" />
-                  <select name="service" value={formData.service} onChange={handleChange} required className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+                  <select name="service" value={formData.service} onChange={handleChange} required aria-label="Project Type" className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-ring">
                     <option value="">Project Type</option>
                     {serviceOptions.map((s) => (
                       <option key={s} value={s}>{s}</option>
