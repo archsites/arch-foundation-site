@@ -11,7 +11,6 @@ export default defineConfig({
     tanstackStart({
       target: "netlify",
       customViteReactPlugin: true,
-      srcDirectory: "src",
       server: { entry: "server" },
     }),
     viteReact(),
