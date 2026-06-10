@@ -102,6 +102,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "GeneralContractor",
+          name: "Arch General Contracting",
+          url: "https://arch-foundation-site.lovable.app",
+          telephone: "+1-609-284-1185",
+          email: "archbasements@gmail.com",
+          image: "https://storage.googleapis.com/gpt-engineer-file-uploads/Z2MCIpwUabf5d8JZ4S15c43oy4g1/social-images/social-1780156727815-General_COntracting.webp",
+          areaServed: { "@type": "State", name: "New Jersey" },
+          address: { "@type": "PostalAddress", addressRegion: "NJ", addressCountry: "US" },
+          priceRange: "$$",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
