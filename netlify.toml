@@ -1,7 +1,19 @@
 [build]
   command = "npm run build"
   publish = "dist/client"
+  functions = "netlify/functions"
+
+[build.environment]
+  # Pin Node to a current LTS that supports the React 19 / Vite 7 toolchain.
+  NODE_VERSION = "20"
+  # Lovable's bunfig.toml is build-time only; the Netlify image uses npm and
+  # the committed package-lock.json. Disable secrets scanner false-positives
+  # on the build directory if needed by uncommenting below:
+  # SECRETS_SCAN_OMIT_PATHS = "dist/**"
 
 [functions]
-  directory = ".netlify/functions-internal"
+  # Function source uses ESM (.mjs). esbuild bundles dependencies; the
+  # SSR bundle in dist/server/** is shipped as an "included file" so the
+  # bundler resolves the dynamic chunks at runtime.
   node_bundler = "esbuild"
+  included_files = ["dist/server/**"]
