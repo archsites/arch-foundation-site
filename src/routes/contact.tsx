@@ -5,8 +5,12 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact | Arch General Contracting" },
-      { name: "description", content: "Get a free estimate from Arch GC. Call (609) 284-1185 or email archbasements@gmail.com." },
+      { name: "description", content: "Get a free estimate from Arch GC. Call (609) 284-1185 or email archbasements@gmail.com for NJ remodeling." },
+      { property: "og:title", content: "Contact | Arch General Contracting" },
+      { property: "og:description", content: "Request a free remodeling estimate from Arch GC in Burlington County, NJ." },
+      { property: "og:url", content: "https://arch-foundation-site.lovable.app/contact" },
     ],
+    links: [{ rel: "canonical", href: "https://arch-foundation-site.lovable.app/contact" }],
   }),
   component: Contact,
 });

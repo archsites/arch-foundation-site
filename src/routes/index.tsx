@@ -8,7 +8,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Arch GC is a Burlington County, NJ general contractor specializing in interior & exterior remodels, additions, decks, kitchens, baths and basements." },
       { property: "og:title", content: "Arch General Contracting | Arch GC" },
       { property: "og:description", content: "Quality general contracting and remodeling across New Jersey." },
+      { property: "og:url", content: "https://arch-foundation-site.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://arch-foundation-site.lovable.app/" }],
   }),
   component: Index,
 });
