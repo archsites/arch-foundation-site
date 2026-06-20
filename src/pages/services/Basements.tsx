@@ -58,8 +58,14 @@ const Basements = () => (
             <Button variant="default" size="lg" asChild><Link to="/contact">Request a Quote<ArrowRight className="w-4 h-4" /></Link></Button>
           </div>
           <div className="space-y-6">
-            <img src={photos.basementHardwood} alt="Finished basement room" className="rounded-lg shadow-xl w-full" />
-            <img src={photos.basementCustomBar} alt="Custom basement bar" className="rounded-lg shadow-xl w-full" />
+          <div className="grid grid-cols-2 gap-4">
+            <img src={photos.basementHardwood} alt="Finished basement entertainment lounge with pool table by Arch Basements" className="rounded-lg shadow-xl w-full h-48 object-cover col-span-2" />
+            <img src={photos.basementCustomBar} alt="Custom basement wet bar and kitchenette with marble island" className="rounded-lg shadow-xl w-full h-40 object-cover" />
+            <img src={photos.basementHomeTheaterProjector} alt="Finished basement home theater with projector screen" className="rounded-lg shadow-xl w-full h-40 object-cover" />
+            <img src={photos.basementFoosball} alt="Basement game room with foosball table and exposed black ceiling" className="rounded-lg shadow-xl w-full h-40 object-cover" />
+            <img src={photos.basementBathroomShower} alt="Basement bathroom marble-tile walk-in shower by Arch Basements" className="rounded-lg shadow-xl w-full h-40 object-cover" />
+            <img src={photos.basementSaunaGlass} alt="Custom basement sauna with glass entry door" className="rounded-lg shadow-xl w-full h-40 object-cover" />
+            <img src={photos.basementStairs} alt="Basement staircase with wood handrail and iron balusters" className="rounded-lg shadow-xl w-full h-40 object-cover" />
           </div>
         </div>
       </div>
