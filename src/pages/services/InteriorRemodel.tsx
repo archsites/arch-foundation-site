@@ -57,7 +57,7 @@ const InteriorRemodel = () => (
             </div>
             <Button variant="default" size="lg" asChild><Link to="/contact">Request a Quote<ArrowRight className="w-4 h-4" /></Link></Button>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6 lg:sticky lg:top-24 self-start">
             <img src={photos.basementHardwoodAlt} alt="Hardwood floor install" className="rounded-lg shadow-xl w-full" />
             <img src={photos.cabinetInstallTwo} alt="Custom built-in install" className="rounded-lg shadow-xl w-full" />
           </div>
