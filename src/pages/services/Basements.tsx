@@ -67,6 +67,7 @@ const Basements = () => (
             <img src={photos.basementSaunaGlass} alt="Custom basement sauna with glass entry door" className="rounded-lg shadow-xl w-full h-40 object-cover" />
             <img src={photos.basementStairs} alt="Basement staircase with wood handrail and iron balusters" className="rounded-lg shadow-xl w-full h-40 object-cover" />
           </div>
+          </div>
         </div>
       </div>
     </section>
