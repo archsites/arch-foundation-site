@@ -80,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "AcLxfwrECIsqVX79fDyHqHeS7JF6pG36U9DbLxQlRzY" },
       { title: "Arch General Contracting" },
       { name: "description", content: "Arch General Contracting — licensed NJ remodeling for kitchens, baths, basements, additions, decks and exteriors." },
       { name: "author", content: "Arch General Contracting" },
