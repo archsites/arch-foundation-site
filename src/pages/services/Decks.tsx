@@ -21,7 +21,7 @@ const Decks = () => (
   <Layout>
     <section className="relative min-h-[60vh] flex items-center">
       <div className="absolute inset-0">
-        <img src={photos.patioCoveredFramedSide} alt="Covered patio framing by Arch GC" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
+        <img src={photos.patioCoveredFramedSide} alt="Covered patio framing by Arch GC" className="w-full h-full object-cover"  loading="eager" decoding="async" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
       </div>
       <div className="container mx-auto px-4 relative z-10">
