@@ -8,9 +8,9 @@ export const Route = createFileRoute("/services/")({
       { name: "description", content: "Interior & exterior remodels, additions, decks & patios, kitchens, baths and basements across New Jersey." },
       { property: "og:title", content: "Services | Arch General Contracting" },
       { property: "og:description", content: "Remodeling services across New Jersey: kitchens, baths, basements, additions, decks and more." },
-      { property: "og:url", content: "https://arch-foundation-site.lovable.app/services" },
+      { property: "og:url", content: "https://archgc.com/services" },
     ],
-    links: [{ rel: "canonical", href: "https://arch-foundation-site.lovable.app/services" }],
+    links: [{ rel: "canonical", href: "https://archgc.com/services" }],
   }),
   component: Services,
 });

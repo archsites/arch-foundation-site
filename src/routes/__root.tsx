@@ -110,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "GeneralContractor",
           name: "Arch General Contracting",
-          url: "https://arch-foundation-site.lovable.app",
+          url: "https://archgc.com",
           telephone: "+1-609-284-1185",
           email: "archbasements@gmail.com",
           image: "https://storage.googleapis.com/gpt-engineer-file-uploads/Z2MCIpwUabf5d8JZ4S15c43oy4g1/social-images/social-1780156727815-General_COntracting.webp",
