@@ -76,7 +76,7 @@ const projectsData: Record<string, Project> = {
       "Guest bathroom with shower",
       "Egress window addition",
     ],
-    images: [photos.basementOpenWide, photos.basementHardwood, photos.basementHardwoodAlt, photos.basementHallway, photos.basementCustomBar],
+    images: [photos.basementOpenWide, photos.basementHardwood, photos.basementFoosball, photos.basementHallway, photos.basementHomeTheaterProjector, photos.basementCustomBar, photos.basementKitchenBar, photos.basementLounge, photos.basementBathroomShower, photos.basementBathroomVanitySauna, photos.basementSaunaGlass, photos.basementStairs, photos.basementAirHockey],
   },
   "5": {
     title: "Two-Story Rear Addition",

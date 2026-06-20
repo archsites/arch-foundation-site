@@ -54,6 +54,25 @@ import img8837 from "./img_8837.jpg";
 import img9003 from "./img_9003.jpg";
 import img9074 from "./img_9074.jpg";
 
+// Real basement (Arch Basements) photos — CDN-hosted webp
+import basementPoolTableAsset from "./arch-basements-pool-table-game-room.webp.asset.json";
+import basementFoosballAsset from "./arch-basements-foosball-game-room-remodel.webp.asset.json";
+import basementHomeTheaterAsset from "./arch-basements-modern-home-theater-screen.webp.asset.json";
+import basementHomeTheaterProjectorAsset from "./arch-basements-home-theater-projector-room.webp.asset.json";
+import basementWetBarAsset from "./arch-basements-wet-bar-kitchenette-marble-island.webp.asset.json";
+import basementLoungeAsset from "./arch-basements-entertainment-lounge-tv-drum-set.webp.asset.json";
+import basementPoolLoungeAsset from "./arch-basements-pool-table-entertainment-lounge.webp.asset.json";
+import basementKitchenBarAsset from "./arch-basements-kitchen-bar-open-living-space.webp.asset.json";
+import basementStairsAsset from "./arch-gc-basement-stair-railing-wood-iron-balusters.webp.asset.json";
+import basementAirHockeyAsset from "./arch-basements-air-hockey-game-room.webp.asset.json";
+import basementBathroomShowerAsset from "./arch-gc-marble-tile-walk-in-shower-basement-bathroom.webp.asset.json";
+import basementBathroomVanitySaunaAsset from "./arch-basements-luxury-basement-bathroom-sauna-vanity.webp.asset.json";
+import basementSaunaGlassAsset from "./arch-gc-custom-sauna-glass-entry-basement-remodel.webp.asset.json";
+import basementShowerTileAsset from "./arch-basements-modern-basement-walk-in-shower-tile.webp.asset.json";
+import basementSaunaBenchAsset from "./arch-basements-sauna-heater-wood-bench-detail.webp.asset.json";
+import basementSaunaSpaAsset from "./arch-gc-glass-sauna-bench-heater-basement-spa.webp.asset.json";
+import basementRainShowerAsset from "./arch-basements-rain-showerhead-marble-tile-closeup.webp.asset.json";
+
 export const photos = {
   // Finished kitchens
   kitchenModernIsland: img8603,
@@ -64,15 +83,30 @@ export const photos = {
   kitchenWoodOpen: img4013,
   kitchenWoodExterior: img4005,
 
-  // Bathroom
+  // Main floor bathroom (frameless glass shower remodel)
   bathroomGlassShower: img7434,
+  // Basement bathroom / sauna remodel (Arch Basements portfolio)
+  basementBathroomShower: basementBathroomShowerAsset.url,
+  basementBathroomVanitySauna: basementBathroomVanitySaunaAsset.url,
+  basementSaunaGlass: basementSaunaGlassAsset.url,
+  basementShowerTile: basementShowerTileAsset.url,
+  basementSaunaBench: basementSaunaBenchAsset.url,
+  basementSaunaSpa: basementSaunaSpaAsset.url,
+  basementRainShower: basementRainShowerAsset.url,
 
-  // Finished basement / interior floors
-  basementOpenWide: img8278,
-  basementHardwood: img8280,
-  basementHallway: img8275,
-  basementHardwoodAlt: img8274,
-  basementCustomBar: img8609,
+  // Finished basements (real Arch Basements game rooms, theaters, bars)
+  basementOpenWide: basementPoolTableAsset.url,
+  basementHardwood: basementPoolLoungeAsset.url,
+  basementHallway: basementHomeTheaterAsset.url,
+  basementHardwoodAlt: img8274, // dark hardwood floor refinish (used on Interior Remodel page)
+  basementCustomBar: basementWetBarAsset.url,
+  basementFoosball: basementFoosballAsset.url,
+  basementHomeTheaterProjector: basementHomeTheaterProjectorAsset.url,
+  basementLounge: basementLoungeAsset.url,
+  basementKitchenBar: basementKitchenBarAsset.url,
+  basementStairs: basementStairsAsset.url,
+  basementAirHockey: basementAirHockeyAsset.url,
+
 
   // Finished interiors
   interiorLivingDining: img5419,
