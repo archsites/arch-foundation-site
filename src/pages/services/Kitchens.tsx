@@ -21,7 +21,7 @@ const Kitchens = () => (
   <Layout>
     <section className="relative min-h-[60vh] flex items-center">
       <div className="absolute inset-0">
-        <img src={photos.kitchenModernIsland} alt="Modern kitchen renovation by Arch GC" className="w-full h-full object-cover" />
+        <img src={photos.kitchenModernIsland} alt="Modern kitchen renovation by Arch GC" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
       </div>
       <div className="container mx-auto px-4 relative z-10">
@@ -58,8 +58,8 @@ const Kitchens = () => (
             <Button variant="default" size="lg" asChild><Link to="/contact">Request a Quote<ArrowRight className="w-4 h-4" /></Link></Button>
           </div>
           <div className="space-y-6">
-            <img src={photos.kitchenModernStove} alt="Kitchen stove and counter detail" className="rounded-lg shadow-xl w-full" />
-            <img src={photos.kitchenGraniteIsland} alt="Granite kitchen island" className="rounded-lg shadow-xl w-full" />
+            <img src={photos.kitchenModernStove} alt="Kitchen stove and counter detail" className="rounded-lg shadow-xl w-full"  loading="lazy" decoding="async" />
+            <img src={photos.kitchenGraniteIsland} alt="Granite kitchen island" className="rounded-lg shadow-xl w-full"  loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

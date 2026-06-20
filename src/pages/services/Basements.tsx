@@ -21,7 +21,7 @@ const Basements = () => (
   <Layout>
     <section className="relative min-h-[60vh] flex items-center">
       <div className="absolute inset-0">
-        <img src={photos.basementOpenWide} alt="Finished basement by Arch GC" className="w-full h-full object-cover" />
+        <img src={photos.basementOpenWide} alt="Finished basement by Arch GC" className="w-full h-full object-cover"  loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
       </div>
       <div className="container mx-auto px-4 relative z-10">
@@ -59,13 +59,13 @@ const Basements = () => (
           </div>
           <div className="space-y-6">
           <div className="grid grid-cols-2 gap-4">
-            <img src={photos.basementHardwood} alt="Finished basement entertainment lounge with pool table by Arch Basements" className="rounded-lg shadow-xl w-full h-48 object-cover col-span-2" />
-            <img src={photos.basementCustomBar} alt="Custom basement wet bar and kitchenette with marble island" className="rounded-lg shadow-xl w-full h-40 object-cover" />
-            <img src={photos.basementHomeTheaterProjector} alt="Finished basement home theater with projector screen" className="rounded-lg shadow-xl w-full h-40 object-cover" />
-            <img src={photos.basementFoosball} alt="Basement game room with foosball table and exposed black ceiling" className="rounded-lg shadow-xl w-full h-40 object-cover" />
-            <img src={photos.basementBathroomShower} alt="Basement bathroom marble-tile walk-in shower by Arch Basements" className="rounded-lg shadow-xl w-full h-40 object-cover" />
-            <img src={photos.basementSaunaGlass} alt="Custom basement sauna with glass entry door" className="rounded-lg shadow-xl w-full h-40 object-cover" />
-            <img src={photos.basementStairs} alt="Basement staircase with wood handrail and iron balusters" className="rounded-lg shadow-xl w-full h-40 object-cover" />
+            <img src={photos.basementHardwood} alt="Finished basement entertainment lounge with pool table by Arch Basements" className="rounded-lg shadow-xl w-full h-48 object-cover col-span-2"  loading="lazy" decoding="async" />
+            <img src={photos.basementCustomBar} alt="Custom basement wet bar and kitchenette with marble island" className="rounded-lg shadow-xl w-full h-40 object-cover"  loading="lazy" decoding="async" />
+            <img src={photos.basementHomeTheaterProjector} alt="Finished basement home theater with projector screen" className="rounded-lg shadow-xl w-full h-40 object-cover"  loading="lazy" decoding="async" />
+            <img src={photos.basementFoosball} alt="Basement game room with foosball table and exposed black ceiling" className="rounded-lg shadow-xl w-full h-40 object-cover"  loading="lazy" decoding="async" />
+            <img src={photos.basementBathroomShower} alt="Basement bathroom marble-tile walk-in shower by Arch Basements" className="rounded-lg shadow-xl w-full h-40 object-cover"  loading="lazy" decoding="async" />
+            <img src={photos.basementSaunaGlass} alt="Custom basement sauna with glass entry door" className="rounded-lg shadow-xl w-full h-40 object-cover"  loading="lazy" decoding="async" />
+            <img src={photos.basementStairs} alt="Basement staircase with wood handrail and iron balusters" className="rounded-lg shadow-xl w-full h-40 object-cover"  loading="lazy" decoding="async" />
           </div>
           </div>
         </div>
