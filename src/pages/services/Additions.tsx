@@ -38,7 +38,7 @@ const Additions = () => (
 
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           <div>
             <h2 className="text-3xl font-heading font-bold mb-6">Engineered, Permitted, and Built to Match</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -57,9 +57,9 @@ const Additions = () => (
             </div>
             <Button variant="default" size="lg" asChild><Link to="/contact">Request a Quote<ArrowRight className="w-4 h-4" /></Link></Button>
           </div>
-          <div className="space-y-6">
-            <img src={photos.additionGreatRoomVaulted} alt="Vaulted great room addition framing" className="rounded-lg shadow-xl w-full" />
-            <img src={photos.additionFramingExterior} alt="Addition exterior framing" className="rounded-lg shadow-xl w-full" />
+          <div className="flex flex-col gap-6 min-h-0">
+            <img src={photos.additionGreatRoomVaulted} alt="Vaulted great room addition framing" className="rounded-lg shadow-xl w-full flex-1 object-cover min-h-0" />
+            <img src={photos.additionFramingExterior} alt="Addition exterior framing" className="rounded-lg shadow-xl w-full flex-1 object-cover min-h-0" />
           </div>
         </div>
       </div>
