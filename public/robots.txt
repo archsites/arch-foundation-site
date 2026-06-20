@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arch-foundation-site.lovable.app/sitemap.xml
+Sitemap: https://archgc.com/sitemap.xml
