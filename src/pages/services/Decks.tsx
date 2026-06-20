@@ -21,7 +21,7 @@ const Decks = () => (
   <Layout>
     <section className="relative min-h-[60vh] flex items-center">
       <div className="absolute inset-0">
-        <img src={photos.patioCoveredFramedSide} alt="Covered patio framing by Arch GC" className="w-full h-full object-cover" />
+        <img src={photos.patioCoveredFramedSide} alt="Covered patio framing by Arch GC" className="w-full h-full object-cover"  loading="eager" decoding="async" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent" />
       </div>
       <div className="container mx-auto px-4 relative z-10">
@@ -57,8 +57,8 @@ const Decks = () => (
             <Button variant="default" size="lg" asChild><Link to="/contact">Request a Quote<ArrowRight className="w-4 h-4" /></Link></Button>
           </div>
           <div className="flex flex-col gap-6 min-h-0">
-            <img src={photos.patioCoveredFramedFront} alt="Covered patio framing" className="rounded-lg shadow-xl w-full flex-1 object-cover min-h-0" />
-            <img src={photos.patioRebarPad} alt="Patio concrete pad with rebar" className="rounded-lg shadow-xl w-full flex-1 object-cover min-h-0" />
+            <img src={photos.patioCoveredFramedFront} alt="Covered patio framing" className="rounded-lg shadow-xl w-full flex-1 object-cover min-h-0"  loading="lazy" decoding="async" />
+            <img src={photos.patioRebarPad} alt="Patio concrete pad with rebar" className="rounded-lg shadow-xl w-full flex-1 object-cover min-h-0"  loading="lazy" decoding="async" />
           </div>
 
         </div>
