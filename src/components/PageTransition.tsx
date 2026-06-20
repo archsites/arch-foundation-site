@@ -27,7 +27,7 @@ const PageTransition = ({ children }: { children: ReactNode }) => {
           visible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <img src={logo} alt="" className="h-20 w-auto animate-scale-in" />
+        <img src={logo} alt="Arch General Contracting" className="h-20 w-auto animate-scale-in" />
       </div>
     </>
   );
