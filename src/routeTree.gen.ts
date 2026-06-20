@@ -10,11 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesKitchensRouteImport } from './routes/services.kitchens'
 import { Route as ServicesInteriorRouteImport } from './routes/services.interior'
 import { Route as ServicesExteriorRouteImport } from './routes/services.exterior'
@@ -27,11 +27,6 @@ import { Route as GalleryIdRouteImport } from './routes/gallery.$id'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -54,40 +49,45 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesKitchensRoute = ServicesKitchensRouteImport.update({
-  id: '/kitchens',
-  path: '/kitchens',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/kitchens',
+  path: '/services/kitchens',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesInteriorRoute = ServicesInteriorRouteImport.update({
-  id: '/interior',
-  path: '/interior',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/interior',
+  path: '/services/interior',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesExteriorRoute = ServicesExteriorRouteImport.update({
-  id: '/exterior',
-  path: '/exterior',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/exterior',
+  path: '/services/exterior',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesDecksRoute = ServicesDecksRouteImport.update({
-  id: '/decks',
-  path: '/decks',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/decks',
+  path: '/services/decks',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesBathroomsRoute = ServicesBathroomsRouteImport.update({
-  id: '/bathrooms',
-  path: '/bathrooms',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/bathrooms',
+  path: '/services/bathrooms',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesBasementsRoute = ServicesBasementsRouteImport.update({
-  id: '/basements',
-  path: '/basements',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/basements',
+  path: '/services/basements',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesAdditionsRoute = ServicesAdditionsRouteImport.update({
-  id: '/additions',
-  path: '/additions',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/additions',
+  path: '/services/additions',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryIdRoute = GalleryIdRouteImport.update({
   id: '/$id',
@@ -100,7 +100,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRouteWithChildren
-  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/gallery/$id': typeof GalleryIdRoute
   '/services/additions': typeof ServicesAdditionsRoute
@@ -110,13 +109,13 @@ export interface FileRoutesByFullPath {
   '/services/exterior': typeof ServicesExteriorRoute
   '/services/interior': typeof ServicesInteriorRoute
   '/services/kitchens': typeof ServicesKitchensRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRouteWithChildren
-  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/gallery/$id': typeof GalleryIdRoute
   '/services/additions': typeof ServicesAdditionsRoute
@@ -126,6 +125,7 @@ export interface FileRoutesByTo {
   '/services/exterior': typeof ServicesExteriorRoute
   '/services/interior': typeof ServicesInteriorRoute
   '/services/kitchens': typeof ServicesKitchensRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -133,7 +133,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRouteWithChildren
-  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/gallery/$id': typeof GalleryIdRoute
   '/services/additions': typeof ServicesAdditionsRoute
@@ -143,6 +142,7 @@ export interface FileRoutesById {
   '/services/exterior': typeof ServicesExteriorRoute
   '/services/interior': typeof ServicesInteriorRoute
   '/services/kitchens': typeof ServicesKitchensRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,7 +151,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/gallery'
-    | '/services'
     | '/sitemap.xml'
     | '/gallery/$id'
     | '/services/additions'
@@ -161,13 +160,13 @@ export interface FileRouteTypes {
     | '/services/exterior'
     | '/services/interior'
     | '/services/kitchens'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/gallery'
-    | '/services'
     | '/sitemap.xml'
     | '/gallery/$id'
     | '/services/additions'
@@ -177,13 +176,13 @@ export interface FileRouteTypes {
     | '/services/exterior'
     | '/services/interior'
     | '/services/kitchens'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/contact'
     | '/gallery'
-    | '/services'
     | '/sitemap.xml'
     | '/gallery/$id'
     | '/services/additions'
@@ -193,6 +192,7 @@ export interface FileRouteTypes {
     | '/services/exterior'
     | '/services/interior'
     | '/services/kitchens'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -200,8 +200,15 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRouteWithChildren
-  ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ServicesAdditionsRoute: typeof ServicesAdditionsRoute
+  ServicesBasementsRoute: typeof ServicesBasementsRoute
+  ServicesBathroomsRoute: typeof ServicesBathroomsRoute
+  ServicesDecksRoute: typeof ServicesDecksRoute
+  ServicesExteriorRoute: typeof ServicesExteriorRoute
+  ServicesInteriorRoute: typeof ServicesInteriorRoute
+  ServicesKitchensRoute: typeof ServicesKitchensRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -211,13 +218,6 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -248,54 +248,61 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/kitchens': {
       id: '/services/kitchens'
-      path: '/kitchens'
+      path: '/services/kitchens'
       fullPath: '/services/kitchens'
       preLoaderRoute: typeof ServicesKitchensRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/interior': {
       id: '/services/interior'
-      path: '/interior'
+      path: '/services/interior'
       fullPath: '/services/interior'
       preLoaderRoute: typeof ServicesInteriorRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/exterior': {
       id: '/services/exterior'
-      path: '/exterior'
+      path: '/services/exterior'
       fullPath: '/services/exterior'
       preLoaderRoute: typeof ServicesExteriorRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/decks': {
       id: '/services/decks'
-      path: '/decks'
+      path: '/services/decks'
       fullPath: '/services/decks'
       preLoaderRoute: typeof ServicesDecksRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/bathrooms': {
       id: '/services/bathrooms'
-      path: '/bathrooms'
+      path: '/services/bathrooms'
       fullPath: '/services/bathrooms'
       preLoaderRoute: typeof ServicesBathroomsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/basements': {
       id: '/services/basements'
-      path: '/basements'
+      path: '/services/basements'
       fullPath: '/services/basements'
       preLoaderRoute: typeof ServicesBasementsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/additions': {
       id: '/services/additions'
-      path: '/additions'
+      path: '/services/additions'
       fullPath: '/services/additions'
       preLoaderRoute: typeof ServicesAdditionsRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/gallery/$id': {
       id: '/gallery/$id'
@@ -318,17 +325,12 @@ const GalleryRouteChildren: GalleryRouteChildren = {
 const GalleryRouteWithChildren =
   GalleryRoute._addFileChildren(GalleryRouteChildren)
 
-interface ServicesRouteChildren {
-  ServicesAdditionsRoute: typeof ServicesAdditionsRoute
-  ServicesBasementsRoute: typeof ServicesBasementsRoute
-  ServicesBathroomsRoute: typeof ServicesBathroomsRoute
-  ServicesDecksRoute: typeof ServicesDecksRoute
-  ServicesExteriorRoute: typeof ServicesExteriorRoute
-  ServicesInteriorRoute: typeof ServicesInteriorRoute
-  ServicesKitchensRoute: typeof ServicesKitchensRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   ServicesAdditionsRoute: ServicesAdditionsRoute,
   ServicesBasementsRoute: ServicesBasementsRoute,
   ServicesBathroomsRoute: ServicesBathroomsRoute,
@@ -336,19 +338,7 @@ const ServicesRouteChildren: ServicesRouteChildren = {
   ServicesExteriorRoute: ServicesExteriorRoute,
   ServicesInteriorRoute: ServicesInteriorRoute,
   ServicesKitchensRoute: ServicesKitchensRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
-
-const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
-  ContactRoute: ContactRoute,
-  GalleryRoute: GalleryRouteWithChildren,
-  ServicesRoute: ServicesRouteWithChildren,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
