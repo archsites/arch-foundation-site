@@ -25,7 +25,6 @@ const projects = [
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const filtered = selectedCategory === "All" ? projects : projects.filter((p) => p.category === selectedCategory);
 
   return (
     <Layout>
@@ -38,6 +37,13 @@ const Gallery = () => {
           </p>
         </div>
       </section>
+
+      {/* Hidden preloader — keeps every gallery image in the browser cache so tab switches are instant */}
+      <div aria-hidden="true" className="sr-only">
+        {projects.map((p) => (
+          <img key={`preload-${p.id}`} src={p.image} alt="" loading="eager" decoding="async" fetchPriority="high" />
+        ))}
+      </div>
 
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -56,21 +62,30 @@ const Gallery = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((project) => (
-              <Link key={project.id} to="/gallery/$id" params={{ id: project.id }} className="group overflow-hidden rounded-lg card-elevated">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                </div>
-                <div className="p-4 bg-card">
-                  <p className="text-xs text-primary uppercase tracking-wider mb-1">{project.category}</p>
-                  <h3 className="font-heading font-bold group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-xs text-muted-foreground mt-1">{project.location}</p>
-                </div>
-              </Link>
-            ))}
+            {projects.map((project) => {
+              const visible = selectedCategory === "All" || project.category === selectedCategory;
+              return (
+                <Link
+                  key={project.id}
+                  to="/gallery/$id"
+                  params={{ id: project.id }}
+                  className={`group overflow-hidden rounded-lg card-elevated ${visible ? "" : "hidden"}`}
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img src={project.image} alt={project.title} loading="eager" decoding="async" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  </div>
+                  <div className="p-4 bg-card">
+                    <p className="text-xs text-primary uppercase tracking-wider mb-1">{project.category}</p>
+                    <h3 className="font-heading font-bold group-hover:text-primary transition-colors">{project.title}</h3>
+                    <p className="text-xs text-muted-foreground mt-1">{project.location}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
+
 
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 text-center">
