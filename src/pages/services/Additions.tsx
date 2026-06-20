@@ -38,7 +38,7 @@ const Additions = () => (
 
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl font-heading font-bold mb-6">Engineered, Permitted, and Built to Match</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
