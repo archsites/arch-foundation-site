@@ -95,8 +95,8 @@ export const photos = {
   basementRainShower: basementRainShowerAsset.url,
 
   // Finished basements (real Arch Basements game rooms, theaters, bars)
-  basementOpenWide: basementPoolTableAsset.url,
-  basementHardwood: basementPoolLoungeAsset.url,
+  basementOpenWide: img8278,
+  basementHardwood: img8280,
   basementHallway: basementHomeTheaterAsset.url,
   basementHardwoodAlt: img8274, // dark hardwood floor refinish (used on Interior Remodel page)
   basementCustomBar: basementWetBarAsset.url,
