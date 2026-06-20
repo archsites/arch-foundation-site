@@ -9,9 +9,9 @@ export const Route = createFileRoute("/gallery/$id")({
       { property: "og:title", content: `Project ${params.id} | Arch General Contracting` },
       { property: "og:description", content: `Details and photos for Arch GC project ${params.id} in New Jersey.` },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `https://arch-foundation-site.lovable.app/gallery/${params.id}` },
+      { property: "og:url", content: `https://archgc.com/gallery/${params.id}` },
     ],
-    links: [{ rel: "canonical", href: `https://arch-foundation-site.lovable.app/gallery/${params.id}` }],
+    links: [{ rel: "canonical", href: `https://archgc.com/gallery/${params.id}` }],
   }),
   component: ProjectDetail,
 });

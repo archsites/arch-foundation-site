@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Decks from "@/pages/services/Decks";
 
-const URL = "https://arch-foundation-site.lovable.app/services/decks";
+const URL = "https://archgc.com/services/decks";
 
 export const Route = createFileRoute("/services/decks")({
   head: () => ({

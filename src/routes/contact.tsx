@@ -8,9 +8,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get a free estimate from Arch GC. Call (609) 284-1185 or email archbasements@gmail.com for NJ remodeling." },
       { property: "og:title", content: "Contact | Arch General Contracting" },
       { property: "og:description", content: "Request a free remodeling estimate from Arch GC in Burlington County, NJ." },
-      { property: "og:url", content: "https://arch-foundation-site.lovable.app/contact" },
+      { property: "og:url", content: "https://archgc.com/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://arch-foundation-site.lovable.app/contact" }],
+    links: [{ rel: "canonical", href: "https://archgc.com/contact" }],
   }),
   component: Contact,
 });
